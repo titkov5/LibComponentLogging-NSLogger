@@ -59,6 +59,13 @@
 
 #ifndef _LCLNSLogger_BrowseBonjour
 #error  '_LCLNSLogger_BrowseBonjour' must be defined in LCLNSLoggerConfig.h
+
+#ifdef _LCLNSLogger_UseBonjourServiceWithName
+#if _LCLNSLogger_UseBonjourServiceWithName
+#ifndef _LCLNSLogger_BonjourServiceName
+#error '_LCLNSLogger_BonjourServiceName'  must be defined in LCLNSLoggerConfig.h
+#ifndef _LCLNSLogger_BonjourServiceType
+#error _LCLNSLogger_BonjourServiceType  must be defined in LCLNSLoggerConfig.h
 #endif
 
 #ifndef _LCLNSLogger_BrowseOnlyLocalDomains
@@ -69,10 +76,27 @@
 #error  '_LCLNSLogger_UseSSL' must be defined in LCLNSLoggerConfig.h
 #endif
 
+#ifdef _LCLNSLogger_UseHost
+#if _LCLNSLogger_UseHost
+#ifndef _LCLNSLogger_HostName
+#error '_LCLNSLogger_HostName' must be defined in LCLNSLoggerConfig.h
+#ifndef _LCLNSLogger_Port
+#error '_LCLNSLogger_Port' must be defined in LCLNSLoggerConfig.h
+#endif
 
+
+
+#endif
 //
 // Fields.
 //
+
+
+#define _LCLNSLogger_BonjourServiceName /*(CFStringRef)*/ \
+"BonjoureName"
+
+#define _LCLNSLogger_BonjourServiceType /*(CFStringRef)*/ \
+"BonjoureName"
 
 
 // The logger instance we use.
@@ -143,8 +167,22 @@ static BOOL _LCLNSLogger_showFunctionName = NO;
     options |= browseOnlyLocalDomains ? kLoggerOption_BrowseOnlyLocalDomain : 0;
     options |= useSSL ? kLoggerOption_UseSSL : 0;
     LoggerSetOptions(_LCLNSLogger_logger, options);
+
+    if ( _LCLNSLogger_UseHost )
+    {
+        LoggerSetViewerHost(_LCLNSLogger_logger, _LCLNSLogger_HostName, _LCLNSLogger_Port);
+    }
     
-    // activate the logger
+    if (_LCLNSLogger_UseBonjourServiceWithName)
+    {
+        LoggerSetupBonjour(_LCLNSLogger_logger,_LCLNSLogger_BonjourServiceType,_LCLNSLogger_BonjourServiceName);
+    }
+    
+   // extern void LoggerSetupBonjour(Logger *logger, CFStringRef bonjourServiceType, CFStringRef bonjourServiceName) NSLOGGER_NOSTRIP;
+
+//#define _LCLNSLogger_BonjoureServiceName /*(CFStringRef)*/ \
+//"BonjoureName"
+//    // activate the logger
     LoggerStart(_LCLNSLogger_logger);
 }
 
