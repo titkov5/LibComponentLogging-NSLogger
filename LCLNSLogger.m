@@ -67,7 +67,7 @@
 #error '_LCLNSLogger_BonjourServiceName'  must be defined in LCLNSLoggerConfig.h
 
 #ifndef _LCLNSLogger_BonjourServiceType
-#error _LCLNSLogger_BonjourServiceType  must be defined in LCLNSLoggerConfig.h
+#error '_LCLNSLogger_BonjourServiceType'  must be defined in LCLNSLoggerConfig.h
 
 #endif
 
