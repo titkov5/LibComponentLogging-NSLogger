@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = 'LibComponentLogging-NSLogger'
   s.version      = '1.0.4'
-  s.source       = { :git => 'https://github.com/aharren/LibComponentLogging-NSLogger.git',
+  s.source       = { :git => 'https://github.com/titkov5/LibComponentLogging-NSLogger.git',
                      :tag => '1.0.4' }
 
   s.homepage     = 'http://0xc0.de/LibComponentLogging'
