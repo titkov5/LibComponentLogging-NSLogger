@@ -59,15 +59,6 @@
 // Tell LCLNSLogger whether it should set the NSLogger BrowseBonjour option.
 #define _LCLNSLogger_BrowseBonjour /* (BOOL) */                                \
     YES
-// Tell LCLNSLogger whether it should set the Name for Bonjour service.
-#define _LCLNSLogger_UseBonjourServiceWithName /*(BOOL)*/ \
-    YES
-
-#define _LCLNSLogger_BonjourServiceName /*(CFStringRef)*/ \
-    "BonjoureNameTest"
-
-#define _LCLNSLogger_BonjourServiceType /*(CFStringRef)*/ \
-    "NSLogger"
 
 // Tell LCLNSLogger whether it should set the NSLogger BrowseOnlyLocalDomains option.
 #define _LCLNSLogger_BrowseOnlyLocalDomains /* (BOOL) */                       \
@@ -76,13 +67,4 @@
 // Tell LCLNSLogger whether it should set the NSLogger UseSSL option.
 #define _LCLNSLogger_UseSSL /* (BOOL) */                                       \
     YES
-// Tell LCLNSLogger wheter it should setup host for NSlogger
-#define _LCLNSLogger_UseHost /*(BOOL)*/ \
-    YES
-
-#define _LCLNSLogger_HostName /*(CFStringRef)*/ \
-    "HostName"
-
-#define _LCLNSLogger_Port /*(UInt32)*/ \
-    8080
 
