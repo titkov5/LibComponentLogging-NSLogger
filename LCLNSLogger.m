@@ -62,10 +62,13 @@
 
 #ifdef _LCLNSLogger_UseBonjourServiceWithName
 #if _LCLNSLogger_UseBonjourServiceWithName
+
 #ifndef _LCLNSLogger_BonjourServiceName
 #error '_LCLNSLogger_BonjourServiceName'  must be defined in LCLNSLoggerConfig.h
+
 #ifndef _LCLNSLogger_BonjourServiceType
 #error _LCLNSLogger_BonjourServiceType  must be defined in LCLNSLoggerConfig.h
+
 #endif
 
 #ifndef _LCLNSLogger_BrowseOnlyLocalDomains
@@ -78,10 +81,13 @@
 
 #ifdef _LCLNSLogger_UseHost
 #if _LCLNSLogger_UseHost
+
 #ifndef _LCLNSLogger_HostName
 #error '_LCLNSLogger_HostName' must be defined in LCLNSLoggerConfig.h
+
 #ifndef _LCLNSLogger_Port
 #error '_LCLNSLogger_Port' must be defined in LCLNSLoggerConfig.h
+
 #endif
 
 
